@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="Keywords" content="SuperSlide,Tab+无缝滚动（slide组合）">
+    <meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+    <title>SuperSlide - Tab+无缝滚动（slide组合）</title>
+    <script type="text/javascript" src="../jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="../xmPlusSlide.js"></script>
+</head>
+
+<body>
+
+
+
+<style type="text/css">
+    /* css 重置 */
+    *{margin:0; padding:0; list-style:none; }
+    body{ background:#fff; font:normal 12px/22px 宋体;  }
+    img{ border:0;  }
+    a{ text-decoration:none; color:#333;  }
+    a:hover{ color:#1974A1;  }
+    .js{width:90%; margin:10px auto 0 auto; }
+    .js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+    .js p span{ float:right; }
+    .js p span a{ color:#f00; text-decoration:underline;   }
+    .js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+    /* 本例子css */
+    .slideGroup{ width:510px;margin:20px auto; border:1px solid #ddd; text-align:left;  }
+    .slideGroup .parHd{ height:30px; line-height:30px; background:#f4f4f4; padding:0 20px; border-bottom:1px solid #ddd;  position:relative;  }
+    .slideGroup .parHd ul{ float:left; position:absolute; left:20px; top:-1px; height:32px;   }
+    .slideGroup .parHd ul li{ float:left; padding:0 15px; cursor:pointer;  }
+    .slideGroup .parHd ul li.active{ height:30px;  background:#fff; border:1px solid #ddd; border-bottom:2px solid #fff; }
+    .slideGroup .slideBox{ zoom:1; padding:10px 0 10px 42px;position: relative;}/*两边留padding为left right 按钮留位置*/
+    .slideGroup .slideInerBox{position: relative;overflow: hidden;height:114px;width:425px;}
+    .slideGroup .sPrev,.slideGroup .sNext{ position:absolute; left:5px; top:10px; display:block; width:30px; height:94px; border:1px solid #ddd; background:url(../images/icoLeft.gif) center center no-repeat #f4f4f4; }
+    .slideGroup .sNext{ left:auto; right:5px; background:url(../images/icoRight.gif) center center no-repeat #f4f4f4;  }
+    .slideGroup .sPrev:hover,.slideGroup .sNext:hover{ border-color:#f60;  }
+
+    .slideGroup .parBd{height:134px;overflow: hidden;}
+    .slideGroup .parBd ul{ overflow:hidden; zoom:1;position: absolute;left:0;   }
+    .slideGroup .parBd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+    .slideGroup .parBd ul li .pic{ text-align:center; }
+    .slideGroup .parBd ul li .pic img{ width:120px; height:90px; display:block;  padding:2px; border:1px solid #ccc; }
+    .slideGroup .parBd ul li .pic a:hover img{ border-color:#999;  }
+    .slideGroup .parBd ul li .title{ line-height:24px;   }
+
+
+</style>
+<div class="slideGroup">
+    <div class="parHd">
+        <ul><li>教育</li><li>培训</li><li>出国</li></ul>
+    </div>
+    <div class="parBd">
+
+        <div class="slideBox">
+            <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="slideInerBox">
+                <ul>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.1</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.2</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.3</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.4</a></div>
+                    </li>
+                </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a>
+        </div><!-- slideBox End -->
+
+        <div class="slideBox">
+            <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="slideInerBox">
+                <ul>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.1</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.2</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.3</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.4</a></div>
+                    </li>
+                </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a>
+        </div><!-- slideBox End -->
+
+        <div class="slideBox">
+            <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="slideInerBox">
+                <ul>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.1</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.2</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.3</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.4</a></div>
+                    </li>
+                </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a>
+        </div><!-- slideBox End -->
+
+    </div>
+</div>
+<div class="slideGroup" style="margin:0 auto">
+    <div class="parHd">
+        <ul><li>教育</li><li>培训</li><li>出国</li></ul>
+    </div>
+    <div class="parBd">
+
+        <div class="slideBox">
+            <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="slideInerBox">
+                <ul>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.1</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.2</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.3</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic1.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图1.4</a></div>
+                    </li>
+                </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a>
+        </div><!-- slideBox End -->
+
+        <div class="slideBox">
+            <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="slideInerBox">
+                <ul>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.1</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.2</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.3</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic2.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图2.4</a></div>
+                    </li>
+                </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a>
+        </div><!-- slideBox End -->
+
+        <div class="slideBox">
+            <a class="sPrev" href="javascript:void(0)"></a>
+            <div class="slideInerBox">
+                <ul>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.1</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.2</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.3</a></div>
+                    </li>
+                    <li>
+                        <div class="pic"><a href="http://www.lcefox.com.cn" target="_blank"><img src="../images/pic3.jpg" /></a></div>
+                        <div class="title"><a href="http://www.lcefox.com.cn" target="_blank">效果图3.4</a></div>
+                    </li>
+                </ul>
+            </div>
+            <a class="sNext" href="javascript:void(0)"></a>
+        </div><!-- slideBox End -->
+
+    </div>
+</div>
+<script type="text/javascript">
+ //   $(".nav").xmPlus({type:"menu",titCeil:".nLi",targetCeil:".sub",trigger:"mouseenter",effect:"navSlideDown",delayTime:300,triggerTime:150,defaultIndex:2})
+    $(".slideBox").xmPlus({mainCeil:".slideInerBox ul",effect:"leftMarquee",prevCeil:".sPrev",nextCeil:".sNext"});//先内层 $("外层div").tab("执行动作的元素","按钮上"，“按钮下”)
+    $(".slideGroup").xmPlus({titCeil:".parHd ul",mainCeil:".parBd"});//后外层,调用方法,  $("外层div").tab("事件操作元素列表的父类","切换内容的父类",默认激活的索引)
+</script>
+</body>
+</html>
+

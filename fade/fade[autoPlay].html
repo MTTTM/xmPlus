@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="../xmPlusSlide.js"></script>
+    <style>
+        *{margin:0;padding:0;}
+        ul{list-style: none;}
+        .tab1{width:400px;height:300px;position:relative;margin:30px;border:1px solid #ccc;float:left;}
+        .hd{height:30px;}
+        .hd li{width:40px;height:30px;float:left;background:beige;margin-right:3px;text-align: center;line-height: 30px;cursor: pointer;}
+        .hd li.active{color:#fff;background:#ccc;}
+        .bd{height:270px;width:396px;position: relative;overflow: hidden;}
+        .bd li{height:266px;width:396px;margin:2px;font-size: 30px;color:#fff;line-height: 270px;text-align: center;}
+        .bd li:nth-of-type(1){background:blue;}
+        .bd li:nth-of-type(2){background:brown;}
+        .bd li:nth-of-type(3){background:blueviolet;}
+        .bd li:nth-of-type(4){background:darkcyan;}
+        .bd li:nth-of-type(5){background:blue;}
+        .bd li:nth-of-type(6){background:brown;}
+        .prev{position:absolute;z-index:100000;display: block;left:2px;top:145px;border-top:20px solid transparent;border-bottom:20px solid transparent;border-right:40px solid cadetblue;}
+        .next{position:absolute;z-index:100000;display: block;right:2px;top:145px;border-top:20px solid transparent;border-bottom:20px solid transparent;border-left:40px solid cadetblue;}
+        .prev:hover{opacity:.6;}
+        .next:hover{opacity:.6;}
+    </style>
+</head>
+<body>
+<div class="tab1">
+    <div class="hd">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <div class="bd">
+        <ul>
+            <li>fade1</li>
+            <li>fade2</li>
+            <li>fade3</li>
+            <li>fade4</li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(".tab1").xmPlus({titCeil:".hd ul",mainCeil:".bd ul",autoPlay:true});
+</script>
+</body>
+</html>
